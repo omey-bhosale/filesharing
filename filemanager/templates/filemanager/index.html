@@ -1,0 +1,228 @@
+{% extends "filemanager/layout.html" %} {% block content %} 
+{% load widget_tweaks %}
+<!--Navbar Ensds Main Section Starts-->
+<div class="mb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row mt-5">
+          <!--Column one-->
+          <div class="col-12 col-md-6 text-center p-2 pos-relative">
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+              <div
+                class="d-md-flex justify-content-md-center pop-block w-94 m-2 thm-bg"
+              >
+              {% if key %}
+                <div id="key-pop" class="w-100">
+                  <header class="hd-bg">
+                    <h3>Generated Key</h3>
+                    <a
+                      class="pos-absolute close-btn m-4"
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#key-pop"
+                      ><i class="icon ion-close-round"></i
+                    ></a>
+                  </header>
+                  
+                  <h1 class="text-success">{{ key }}</h1>
+                  <input
+                      type="text"
+                      id="name"
+                      class="form-control cust-ip cmn-br rounded-0"
+                      autofocus=""
+                      value="{{slugd}}"
+                    />
+                  <button class="btn btn-bg w-50 mb-2 mt-4" type="button">
+                    &nbsp;Copy</button
+                  >
+                  <!-- <button class="btn br w-50 m-1 mt-4" type="button">
+                    <i class="icon ion-android-textsms"></i>&nbsp;SMS
+                  </button> -->
+                </div>
+               {% endif %}
+                <div id="encrypt-pop" class="w-100 collapse">
+                  <header class="hd-bg">
+                    <h3>Encrypt your file&nbsp;</h3>
+                    <a
+                      class="pos-absolute close-btn m-4"
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#encrypt-pop"
+                      ><i class="icon ion-close-round"></i
+                    ></a>
+                  </header>
+                  <div class="ip-bk">
+                    <!-- <input
+                      type="text"
+                      id="name"
+                      class="form-control cust-ip cmn-br rounded-0"
+                      autofocus=""
+                      placeholder="Property Face Direction"
+                    /> -->
+{% render_field form.password autofocus="" class+="form-control cust-ip cmn-br rounded-0" %}
+                   
+
+                    <label class="ip-lbl" for="name">Password</label>
+                  </div>
+                  <!-- <div class="ip-bk">
+                      <input
+                        type="text"
+                        id="send-from"
+                        class="form-control cust-ip cmn-br rounded-0"
+                        autofocus=""
+                        placeholder="Property Face Direction"
+                      /><label class="ip-lbl" for="send-from"
+                        >Confirm Password</label
+                      >
+                    </div> -->
+                  <div class="ip-bk">
+                    <!-- <input
+                      type="text"
+                      id="message"
+                      class="form-control cust-ip cmn-br rounded-0"
+                      autofocus=""
+                      placeholder="Property Face Direction"
+                    /> -->
+                    {% render_field form.email autofocus="" class+="form-control cust-ip cmn-br rounded-0" %}
+                    <label class="ip-lbl" for="message">Send To</label>
+                  </div>
+                  <button class="btn btn-bg w-50 m-1 mt-4" type="submit">
+                    <i class="fa fa-send-o"></i>&nbsp;Encrypt1
+                  </button>
+                </div>
+                <!-- <div id="email-pop" class="w-100 collapse">
+                    <header class="hd-bg">
+                      <h3>Send To Mail&nbsp;</h3>
+                      <a
+                        class="pos-absolute close-btn m-4"
+                        href="#"
+                        data-toggle="collapse"
+                        data-target="#email-pop"
+                        ><i class="icon ion-close-round"></i
+                      ></a>
+                    </header>
+                    <div class="ip-bk">
+                      <input
+                        type="text"
+                        id="name"
+                        class="form-control cust-ip cmn-br rounded-0"
+                        autofocus=""
+                        placeholder="Property Face Direction"
+                      /><label class="ip-lbl" for="name">Send To</label>
+                    </div>
+                    <div class="ip-bk">
+                      <input
+                        type="text"
+                        id="send-from"
+                        class="form-control cust-ip cmn-br rounded-0"
+                        autofocus=""
+                        placeholder="Property Face Direction"
+                      /><label class="ip-lbl" for="send-from">Send From</label>
+                    </div>
+                    <div class="ip-bk">
+                      <input
+                        type="text"
+                        id="message"
+                        class="form-control cust-ip cmn-br rounded-0"
+                        autofocus=""
+                        placeholder="Property Face Direction"
+                      /><label class="ip-lbl" for="message">Message</label>
+                    </div>
+                    <button class="btn btn-bg w-50 m-1 mt-4" type="button">
+                      <i class="fa fa-send-o"></i>&nbsp;Send 123
+                    </button>
+                  </div> -->
+              </div>
+              <div class="d-block thm-bg shad p-2 mb-2">
+                <div class="mb-4">
+                  <a class="choose-img-icn-bk"
+                    ><i class="icon ion-plus-circled img-choose" ss=""></i>
+
+                    {{form.filename}}
+                  </a>
+                </div>
+                <div class="mb-2">
+                  <button class="btn active m-1" type="button">
+                    <i class="fa fa-send-o"></i>&nbsp;Direct
+                  </button>
+                  <!-- <button
+                      class="btn btn-bg1 m-1"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#email-pop"
+                    >
+                      <i class="icon ion-ios-email-outline"></i>&nbsp;Email
+                    </button> -->
+                  <button class="btn btn-bg1 m-1" type="button">
+                    <i class="icon ion-ios-copy-outline"></i>&nbsp;Copy
+                  </button>
+                </div>
+                <div>
+                  <button
+                    class="btn br w-50 m-1"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#encrypt-pop"
+                  >
+                    <i class="fa fa-send-o"></i>&nbsp;Encrypt &amp; Send
+                  </button>
+
+                  <!-- <button
+                      class="btn btn-bg w-50 m-1"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#key-pop"
+                    >
+                      <i class="fa fa-send-o"></i>&nbsp;Send2
+                    </button> -->
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!--Column 2-->
+          <div class="col-12 col-md-6 text-center p-2">
+            <!-- <div class="d-block thm-bg shad p-2 mb-3">
+              <div class="mb-4">
+                <div class="ip-bk">
+                  <input
+                    type="text"
+                    id="send-from"
+                    class="form-control cust-ip cmn-br rounded-0"
+                    autofocus=""
+                    placeholder="Property Face Direction"
+                  /><label class="ip-lbl" for="send-from"
+                    >Enter Generated Key</label
+                  >
+                </div>
+              </div>
+              <div class="mb-2">
+                <button class="btn btn-bg" type="button">
+                  <i class="fas fa-file-download"></i>&nbsp;Download
+                </button>
+              </div>
+            </div> -->
+            <div class="d-block thm-bg shad p-2 mb-2">
+              <header>
+                <h4 class="clr-green">Instructions</h4>
+              </header>
+              <div class="mb-4">
+                <ul class="text-white">
+                  <li>
+                    Step1- &nbsp;Choose file to send &nbsp; &nbsp;&nbsp;<br />
+                  </li>
+                  <li>Step2- &nbsp;Encrypt Your File with Password<br /></li>
+                  <li>Step 3- Select Sending Option&nbsp;<br /></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

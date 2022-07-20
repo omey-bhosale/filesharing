@@ -1,0 +1,52 @@
+{% extends "filemanager/layout.html" %} {% block content %} 
+{% load widget_tweaks %}
+<!--Navbar Ensds Main Section Starts-->
+<div class="mb-4 mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="d-block thm-bg shad p-2 mb-3">
+            <div class="mb-4">
+              <div class="ip-bk">
+                <!-- <input
+                  type="text"
+                  id="send-from"
+                  class="form-control cust-ip cmn-br rounded-0"
+                  autofocus=""
+                  placeholder="Property Face Direction"
+                /> -->
+                {% render_field form.key autofocus="" placeholder="Property Face Direction" class+="form-control cust-ip cmn-br rounded-0" %}
+                
+                <label class="ip-lbl" for="send-from"
+                  >Enter Generated Key</label
+                >
+              </div>
+            </div>
+            <div class="mb-2 text-center">
+              <button class="btn btn-bg" type="submit">
+                <i class="fas fa-file-download"></i>&nbsp;Get Download Link
+              </button>
+            </div>
+          </div>
+        </form>
+        {% if downloadurl %}
+        <div class="d-block thm-bg shad p-2 mb-3">
+            <div class="mb-2 text-center">
+              <a href="/download/{{downloadurl}}" class="btn btn-bg" type="submit">
+                <i class="fas fa-file-download"></i>&nbsp;Download
+              </a>
+            </div>
+        </div>
+        {% endif %}
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

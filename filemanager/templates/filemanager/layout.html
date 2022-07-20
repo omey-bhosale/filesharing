@@ -1,0 +1,147 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>upload</title>
+
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/fonts/fontawesome-all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/fonts/font-awesome.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/fonts/ionicons.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/fonts/fontawesome5-overrides.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/css/Contact-Form-Clean.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/css/Footer-Dark.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/css/Login-Form-Clean.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/css/Navigation-with-Button.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/css/Registration-Form-with-Photo.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'filemanager/assets/css/styles.css' %}"
+    />
+  </head>
+
+  <body class="thm-bg">
+    <div>
+      <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><strong>Anonymous File Sharing System</strong><br /></a
+          >
+          <!-- <button
+            data-toggle="collapse"
+            class="navbar-toggler border-0"
+            data-target="#navcol-1"
+          >
+            <span class="sr-only">Toggle navigation</span
+            ><span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+            <span class="navbar-text actions">
+              <a class="login" href="login.html">Log In</a
+              ><a
+                class="btn btn-light action-button btn-bg text-white"
+                role="button"
+                href="signup.html"
+                >Sign Up</a
+              ></span
+            >
+          </div> -->
+        </div>
+      </nav>
+     
+{%block content %}
+
+            {%endblock%}
+    <div class="footer-dark">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+              <!-- <h3>Services</h3>
+              <ul>
+                <li><a href="#">Web design</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Hosting</a></li>
+              </ul> -->
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+              <!-- <h3>About</h3>
+              <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Privacy policy</a></li>
+              </ul> -->
+            </div>
+            <div class="col-md-8 mx-auto item text">
+              <h3>Anonymous File Sharing System</h3>
+              <p>
+                Encry File Transfer Supports All File formats to transfer over
+                the network.Also provided the End-to-End Encryption with key and
+                Password.
+              </p>
+            </div>
+            <div class="col item social">
+              <a href="#"><i class="icon ion-social-facebook"></i></a
+              ><a href="#"><i class="icon ion-social-twitter"></i></a
+              ><a href="#"><i class="icon ion-social-snapchat"></i></a
+              ><a href="#"><i class="icon ion-social-instagram"></i></a>
+            </div>
+          </div>
+          <p class="copyright">
+            <strong>Encry File Transfer</strong>&nbsp;© 2021
+          </p>
+        </div>
+      </footer>
+    </div>
+   
+    <script src="{% static 'filemanager/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'filemanager/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
